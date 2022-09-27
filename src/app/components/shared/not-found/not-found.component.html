@@ -1,0 +1,77 @@
+<p>not.found works!</p>
+
+<ul>
+    <li>
+    <a routerLink="/auth">
+        Ir a Login
+    </a>
+    </li>
+    <li routerLink="/authLazy/login">
+        Ir a Login Lazy
+    </li>
+
+    <li *ngFor = "let item of [1,2,3]">
+
+        <button [routerLink]="'/authLazy/enroll'+item"> 
+            Ir a Registro
+        </button>
+
+    </li>
+
+</ul>
+
+<ol>
+
+    <li>
+
+        <a routerLink="/pokedex">
+            Ir a PokedexLazy
+        </a>
+        <br>
+
+        <a routerLink="/pokedex/add">
+            Ir a Agregar
+        </a>
+        <br>
+        <a routerLink="/pokedex/edit/1">
+            Ir a Editar
+        </a>
+        <br>
+        <a routerLink="/pokedex/find">
+            Ir a Buscar
+        </a>
+        <br>
+        <a routerLink="/pokedex/list">
+            Ir a Listar
+        </a>
+        <br>
+        <a routerLink="/pokedex/pokemon/2">
+            Ir a Pokemon
+        </a>
+
+        <br>
+        <br>
+        <div>
+            <input type="text" placeholder="usuario" #userName>
+            <br>
+            <input type="text" placeholder="contraseña" #password>
+        </div>
+        
+
+
+        <br>
+        <br>
+        <button (click)="login(userName.value,password.value)">
+            Login
+        </button>
+        <br><br>
+
+        <button (click)="logout()">
+            Logout
+        </button>
+
+            <p>{{showSession()}}</p>
+
+
+    </li>
+</ol>
